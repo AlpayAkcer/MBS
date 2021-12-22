@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LicenceDb">
+  <DataContextMoniker Name="/LicenceDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f7ac4f16-780e-4781-bc7d-82db08fe2ca7" absoluteBounds="1.625, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LicenceDbDataContext/Licence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dbe86fa-09d6-41d8-93b7-35a2825d9d81" absoluteBounds="1.6400000000000001, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbe74636-1bea-4951-a344-21b929d8bafc" absoluteBounds="2.875, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LicenceDbDataContext/Mac" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05b0a629-87e5-4491-953c-d75cfe7130a9" absoluteBounds="2.89, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 2.70359537760417); (3.25 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LicenceDbDataContext/Licence/Licence_Mac" />
+      <nodes>
+        <classShapeMoniker Id="f7ac4f16-780e-4781-bc7d-82db08fe2ca7" />
+        <classShapeMoniker Id="cbe74636-1bea-4951-a344-21b929d8bafc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

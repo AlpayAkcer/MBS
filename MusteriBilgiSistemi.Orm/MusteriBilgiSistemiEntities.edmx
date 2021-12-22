@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MusteriBilgiSistemiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MusteriBilgiSistemiModelStoreContainer">
+          <EntitySet Name="Cariler" EntityType="MusteriBilgiSistemiModel.Store.Cariler" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="MusteriBilgiSistemiModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employees" EntityType="MusteriBilgiSistemiModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Licence" EntityType="MusteriBilgiSistemiModel.Store.Licence" store:Type="Tables" store:Schema="dbo" store:Name="Licence">
+            <DefiningQuery>SELECT 
+      [Licence].[ProductKey] AS [ProductKey]
+      FROM [dbo].[Licence] AS [Licence]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Musteriler" EntityType="MusteriBilgiSistemiModel.Store.Musteriler" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OdemeTuru" EntityType="MusteriBilgiSistemiModel.Store.OdemeTuru" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="MusteriBilgiSistemiModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sepet" EntityType="MusteriBilgiSistemiModel.Store.Sepet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SepetDetay" EntityType="MusteriBilgiSistemiModel.Store.SepetDetay" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="MusteriBilgiSistemiModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="urunler" EntityType="MusteriBilgiSistemiModel.Store.urunler" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Cariler_Musteriler" Association="MusteriBilgiSistemiModel.Store.FK_Cariler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Cariler" EntitySet="Cariler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Categories" Association="MusteriBilgiSistemiModel.Store.FK_Products_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_Musteriler" Association="MusteriBilgiSistemiModel.Store.FK_Sepet_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_OdemeTuru" Association="MusteriBilgiSistemiModel.Store.FK_Sepet_OdemeTuru">
+            <End Role="OdemeTuru" EntitySet="OdemeTuru" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_SepetDetay" Association="MusteriBilgiSistemiModel.Store.FK_Sepet_SepetDetay">
+            <End Role="SepetDetay" EntitySet="SepetDetay" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SepetDetay_Products" Association="MusteriBilgiSistemiModel.Store.FK_SepetDetay_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="SepetDetay" EntitySet="SepetDetay" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cariler">
+          <Key>
+            <PropertyRef Name="CariId" />
+          </Key>
+          <Property Name="CariId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="Tutar" Type="money" />
+          <Property Name="AlinanTarih" Type="datetime" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Onay" Type="bit" />
+          <Property Name="Tarih" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MusteriBilgiSistemi.dbo.Licence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Licence">
+          <Key>
+            <PropertyRef Name="ProductKey" />
+          </Key>
+          <Property Name="ProductKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Name="MusteriId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MusteriSoyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirmaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="text" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="11" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="OdemeTuru">
+          <Key>
+            <PropertyRef Name="TurId" />
+          </Key>
+          <Property Name="TurId" Type="int" Nullable="false" />
+          <Property Name="OdemeAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitInStock" Type="smallint" />
+          <Property Name="Onay" Type="bit" />
+          <Property Name="Tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="SepetId" />
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Name="SepetId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" Nullable="false" />
+          <Property Name="OdemeTipId" Type="int" />
+          <Property Name="SiparisTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="SepetDetay">
+          <Key>
+            <PropertyRef Name="SepetDetayId" />
+          </Key>
+          <Property Name="SepetDetayId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SepetId" Type="int" />
+          <Property Name="UrunId" Type="int" />
+          <Property Name="Fiyat" Type="money" />
+          <Property Name="Adet" Type="int" />
+          <Property Name="ToplamTutar" Type="money" />
+          <Property Name="OlusturmaTarihi" Type="datetime" />
+          <Property Name="Onay" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="UrunId" />
+          </Key>
+          <Property Name="UrunId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UrunAdi" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Miktar" Type="int" Nullable="false" />
+          <Property Name="Fiyat" Type="money" Nullable="false" />
+          <Property Name="ToplamTutar" Type="money" />
+        </EntityType>
+        <Association Name="FK_Cariler_Musteriler">
+          <End Role="Musteriler" Type="MusteriBilgiSistemiModel.Store.Musteriler" Multiplicity="0..1" />
+          <End Role="Cariler" Type="MusteriBilgiSistemiModel.Store.Cariler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriId" />
+            </Principal>
+            <Dependent Role="Cariler">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Categories">
+          <End Role="Categories" Type="MusteriBilgiSistemiModel.Store.Categories" Multiplicity="0..1" />
+          <End Role="Products" Type="MusteriBilgiSistemiModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_Musteriler">
+          <End Role="Musteriler" Type="MusteriBilgiSistemiModel.Store.Musteriler" Multiplicity="1" />
+          <End Role="Sepet" Type="MusteriBilgiSistemiModel.Store.Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_OdemeTuru">
+          <End Role="OdemeTuru" Type="MusteriBilgiSistemiModel.Store.OdemeTuru" Multiplicity="0..1" />
+          <End Role="Sepet" Type="MusteriBilgiSistemiModel.Store.Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OdemeTuru">
+              <PropertyRef Name="TurId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="OdemeTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_SepetDetay">
+          <End Role="SepetDetay" Type="MusteriBilgiSistemiModel.Store.SepetDetay" Multiplicity="1" />
+          <End Role="Sepet" Type="MusteriBilgiSistemiModel.Store.Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SepetDetay">
+              <PropertyRef Name="SepetDetayId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="SepetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SepetDetay_Products">
+          <End Role="Products" Type="MusteriBilgiSistemiModel.Store.Products" Multiplicity="0..1" />
+          <End Role="SepetDetay" Type="MusteriBilgiSistemiModel.Store.SepetDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="SepetDetay">
+              <PropertyRef Name="UrunId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MusteriBilgiSistemiModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MusteriBilgiSistemiEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cariler" EntityType="MusteriBilgiSistemiModel.Cariler" />
+          <EntitySet Name="Categories" EntityType="MusteriBilgiSistemiModel.Categories" />
+          <EntitySet Name="Employees" EntityType="MusteriBilgiSistemiModel.Employees" />
+          <EntitySet Name="Licence" EntityType="MusteriBilgiSistemiModel.Licence" />
+          <EntitySet Name="Musteriler" EntityType="MusteriBilgiSistemiModel.Musteriler" />
+          <EntitySet Name="OdemeTuru" EntityType="MusteriBilgiSistemiModel.OdemeTuru" />
+          <EntitySet Name="Products" EntityType="MusteriBilgiSistemiModel.Products" />
+          <EntitySet Name="Sepet" EntityType="MusteriBilgiSistemiModel.Sepet" />
+          <EntitySet Name="SepetDetay" EntityType="MusteriBilgiSistemiModel.SepetDetay" />
+          <EntitySet Name="sysdiagrams" EntityType="MusteriBilgiSistemiModel.sysdiagrams" />
+          <EntitySet Name="urunler" EntityType="MusteriBilgiSistemiModel.urunler" />
+          <AssociationSet Name="FK_Cariler_Musteriler" Association="MusteriBilgiSistemiModel.FK_Cariler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Cariler" EntitySet="Cariler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Categories" Association="MusteriBilgiSistemiModel.FK_Products_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_Musteriler" Association="MusteriBilgiSistemiModel.FK_Sepet_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_OdemeTuru" Association="MusteriBilgiSistemiModel.FK_Sepet_OdemeTuru">
+            <End Role="OdemeTuru" EntitySet="OdemeTuru" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SepetDetay_Products" Association="MusteriBilgiSistemiModel.FK_SepetDetay_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="SepetDetay" EntitySet="SepetDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sepet_SepetDetay" Association="MusteriBilgiSistemiModel.FK_Sepet_SepetDetay">
+            <End Role="SepetDetay" EntitySet="SepetDetay" />
+            <End Role="Sepet" EntitySet="Sepet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cariler">
+          <Key>
+            <PropertyRef Name="CariId" />
+          </Key>
+          <Property Type="Int32" Name="CariId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MusteriId" />
+          <Property Type="Decimal" Name="Tutar" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="AlinanTarih" Precision="3" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Musteriler" Relationship="MusteriBilgiSistemiModel.FK_Cariler_Musteriler" FromRole="Cariler" ToRole="Musteriler" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Type="Int32" Name="CategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Products" Relationship="MusteriBilgiSistemiModel.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EmployeeName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployeeLastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Onay" />
+          <Property Type="DateTime" Name="Tarih" Precision="3" />
+        </EntityType>
+        <EntityType Name="Licence">
+          <Key>
+            <PropertyRef Name="ProductKey" />
+          </Key>
+          <Property Type="Guid" Name="ProductKey" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Type="Int32" Name="MusteriId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MusteriAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MusteriSoyadi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirmaAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Adres" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Telefon" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Tarih" Precision="3" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Cariler" Relationship="MusteriBilgiSistemiModel.FK_Cariler_Musteriler" FromRole="Musteriler" ToRole="Cariler" />
+          <NavigationProperty Name="Sepet" Relationship="MusteriBilgiSistemiModel.FK_Sepet_Musteriler" FromRole="Musteriler" ToRole="Sepet" />
+        </EntityType>
+        <EntityType Name="OdemeTuru">
+          <Key>
+            <PropertyRef Name="TurId" />
+          </Key>
+          <Property Type="Int32" Name="TurId" Nullable="false" />
+          <Property Type="String" Name="OdemeAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Sepet" Relationship="MusteriBilgiSistemiModel.FK_Sepet_OdemeTuru" FromRole="OdemeTuru" ToRole="Sepet" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Type="Int32" Name="ProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CategoryId" />
+          <Property Type="String" Name="ProductName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="UnitPrice" Precision="19" Scale="4" />
+          <Property Type="Int16" Name="UnitInStock" />
+          <Property Type="Boolean" Name="Onay" />
+          <Property Type="DateTime" Name="Tarih" Precision="3" />
+          <NavigationProperty Name="Categories" Relationship="MusteriBilgiSistemiModel.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="SepetDetay" Relationship="MusteriBilgiSistemiModel.FK_SepetDetay_Products" FromRole="Products" ToRole="SepetDetay" />
+        </EntityType>
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="SepetId" />
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Type="Int32" Name="SepetId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MusteriId" Nullable="false" />
+          <Property Type="Int32" Name="OdemeTipId" />
+          <Property Type="DateTime" Name="SiparisTarihi" Precision="3" />
+          <Property Type="DateTime" Name="BitisTarihi" Precision="3" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Musteriler" Relationship="MusteriBilgiSistemiModel.FK_Sepet_Musteriler" FromRole="Sepet" ToRole="Musteriler" />
+          <NavigationProperty Name="OdemeTuru" Relationship="MusteriBilgiSistemiModel.FK_Sepet_OdemeTuru" FromRole="Sepet" ToRole="OdemeTuru" />
+          <NavigationProperty Name="SepetDetay" Relationship="MusteriBilgiSistemiModel.FK_Sepet_SepetDetay" FromRole="Sepet" ToRole="SepetDetay" />
+        </EntityType>
+        <EntityType Name="SepetDetay">
+          <Key>
+            <PropertyRef Name="SepetDetayId" />
+          </Key>
+          <Property Type="Int32" Name="SepetDetayId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="SepetId" />
+          <Property Type="Int32" Name="UrunId" />
+          <Property Type="Decimal" Name="Fiyat" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="Adet" />
+          <Property Type="Decimal" Name="ToplamTutar" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="OlusturmaTarihi" Precision="3" />
+          <Property Type="Boolean" Name="Onay" />
+          <NavigationProperty Name="Products" Relationship="MusteriBilgiSistemiModel.FK_SepetDetay_Products" FromRole="SepetDetay" ToRole="Products" />
+          <NavigationProperty Name="Sepet" Relationship="MusteriBilgiSistemiModel.FK_Sepet_SepetDetay" FromRole="SepetDetay" ToRole="Sepet" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="UrunId" />
+          </Key>
+          <Property Type="Int32" Name="UrunId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UrunAdi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Miktar" Nullable="false" />
+          <Property Type="Decimal" Name="Fiyat" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="ToplamTutar" Precision="19" Scale="4" />
+        </EntityType>
+        <Association Name="FK_Cariler_Musteriler">
+          <End Type="MusteriBilgiSistemiModel.Musteriler" Role="Musteriler" Multiplicity="0..1" />
+          <End Type="MusteriBilgiSistemiModel.Cariler" Role="Cariler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriId" />
+            </Principal>
+            <Dependent Role="Cariler">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Categories">
+          <End Type="MusteriBilgiSistemiModel.Categories" Role="Categories" Multiplicity="0..1" />
+          <End Type="MusteriBilgiSistemiModel.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_Musteriler">
+          <End Type="MusteriBilgiSistemiModel.Musteriler" Role="Musteriler" Multiplicity="1" />
+          <End Type="MusteriBilgiSistemiModel.Sepet" Role="Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_OdemeTuru">
+          <End Type="MusteriBilgiSistemiModel.OdemeTuru" Role="OdemeTuru" Multiplicity="0..1" />
+          <End Type="MusteriBilgiSistemiModel.Sepet" Role="Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OdemeTuru">
+              <PropertyRef Name="TurId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="OdemeTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SepetDetay_Products">
+          <End Type="MusteriBilgiSistemiModel.Products" Role="Products" Multiplicity="0..1" />
+          <End Type="MusteriBilgiSistemiModel.SepetDetay" Role="SepetDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="SepetDetay">
+              <PropertyRef Name="UrunId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sepet_SepetDetay">
+          <End Type="MusteriBilgiSistemiModel.SepetDetay" Role="SepetDetay" Multiplicity="1" />
+          <End Type="MusteriBilgiSistemiModel.Sepet" Role="Sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SepetDetay">
+              <PropertyRef Name="SepetDetayId" />
+            </Principal>
+            <Dependent Role="Sepet">
+              <PropertyRef Name="SepetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MusteriBilgiSistemiModelStoreContainer" CdmEntityContainer="MusteriBilgiSistemiEntities">
+          <EntitySetMapping Name="Cariler">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Cariler">
+              <MappingFragment StoreEntitySet="Cariler">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="AlinanTarih" ColumnName="AlinanTarih" />
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="CariId" ColumnName="CariId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Licence">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Licence">
+              <MappingFragment StoreEntitySet="Licence">
+                <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteriler">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+                <ScalarProperty Name="MusteriSoyadi" ColumnName="MusteriSoyadi" />
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OdemeTuru">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.OdemeTuru">
+              <MappingFragment StoreEntitySet="OdemeTuru">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="OdemeAdi" ColumnName="OdemeAdi" />
+                <ScalarProperty Name="TurId" ColumnName="TurId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="UnitInStock" ColumnName="UnitInStock" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sepet">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.Sepet">
+              <MappingFragment StoreEntitySet="Sepet">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+                <ScalarProperty Name="OdemeTipId" ColumnName="OdemeTipId" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="SepetId" ColumnName="SepetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SepetDetay">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.SepetDetay">
+              <MappingFragment StoreEntitySet="SepetDetay">
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+                <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+                <ScalarProperty Name="SepetId" ColumnName="SepetId" />
+                <ScalarProperty Name="SepetDetayId" ColumnName="SepetDetayId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunler">
+            <EntityTypeMapping TypeName="MusteriBilgiSistemiModel.urunler">
+              <MappingFragment StoreEntitySet="urunler">
+                <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

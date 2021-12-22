@@ -1,0 +1,17 @@
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.dll
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.pdb
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.csprojResolveAssemblyReference.cache
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.dll
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.pdb
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.dll
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.pdb
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.csprojAssemblyReference.cache
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.csproj.CoreCompileInputs.cache
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.dll
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.pdb
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.dll
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\bin\Debug\MusteriBilgiSistemi.Dto.pdb
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.csprojAssemblyReference.cache
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.csproj.CoreCompileInputs.cache
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.dll
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Dto\obj\Debug\MusteriBilgiSistemi.Dto.pdb

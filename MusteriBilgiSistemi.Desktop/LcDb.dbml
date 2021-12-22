@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MusteriBilgiSistemi" Class="LcDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=MusteriBilgiSistemi;Integrated Security=True" SettingsObjectName="MusteriBilgiSistemi.Desktop.Properties.Settings" SettingsPropertyName="MusteriBilgiSistemiConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Licence" Member="Licences">
+    <Type Name="Licence">
+      <Column Name="ProductKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

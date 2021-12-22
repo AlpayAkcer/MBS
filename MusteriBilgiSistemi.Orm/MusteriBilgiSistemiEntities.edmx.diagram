@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db3e49f78e4f43469da0ba2c16ddae4d" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Cariler" Width="1.5" PointX="6.6251483702217921" PointY="27.479101700465709" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Categories" Width="1.5" PointX="7.7383047862622449" PointY="16.140550933843734" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Employees" Width="1.5" PointX="2.3023196115634961" PointY="2.8462509228131969" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Licence" Width="1.5" PointX="2.5552615553863633" PointY="1.9043652424143465" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Musteriler" Width="1.5" PointX="1.4529934439123577" PointY="7.1197693381084921" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.OdemeTuru" Width="1.5" PointX="10.622467606618287" PointY="4.5609926900644755" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Products" Width="1.5" PointX="10.356811824420845" PointY="31.541603624607252" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.Sepet" Width="1.5" PointX="6.9387713814800467" PointY="7.1528731617857115" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.SepetDetay" Width="1.5" PointX="11.765032779315968" PointY="30.192651509397034" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.sysdiagrams" Width="1.5" PointX="11.23374815435789" PointY="18.004058101216359" />
+        <EntityTypeShape EntityType="MusteriBilgiSistemiModel.urunler" Width="1.5" PointX="2.2052889960842621" PointY="6.5015160769696889" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_Cariler_Musteriler" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_Products_Categories" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_Sepet_Musteriler" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_Sepet_OdemeTuru" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_SepetDetay_Products" />
+        <AssociationConnector Association="MusteriBilgiSistemiModel.FK_Sepet_SepetDetay" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

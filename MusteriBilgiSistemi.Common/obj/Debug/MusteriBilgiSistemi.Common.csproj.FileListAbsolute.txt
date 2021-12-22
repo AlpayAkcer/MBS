@@ -1,0 +1,17 @@
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.dll
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.pdb
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.csprojResolveAssemblyReference.cache
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.dll
+C:\Users\Webmaster\documents\visual studio 2012\Projects\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.pdb
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.dll
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.pdb
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.csprojAssemblyReference.cache
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.csproj.CoreCompileInputs.cache
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.dll
+E:\Alpay Masaüstü\08-08-2016 BACKUP\PROJECTS\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.pdb
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.dll
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\bin\Debug\MusteriBilgiSistemi.Common.pdb
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.csprojAssemblyReference.cache
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.csproj.CoreCompileInputs.cache
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.dll
+D:\Customer\ALPAY  YAPILAN PROJELER\MüşteriBilgiSistemi\MusteriBilgiSistemi\MusteriBilgiSistemi.Common\obj\Debug\MusteriBilgiSistemi.Common.pdb

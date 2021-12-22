@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LcDb">
+  <DataContextMoniker Name="/LcDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1156003d-34f7-4305-b90b-aa5093e53840" absoluteBounds="4.25, 2, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/LcDbDataContext/Licence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="442a7e4b-afef-4670-ab32-36ad27dfd24f" absoluteBounds="4.265, 2.46, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
